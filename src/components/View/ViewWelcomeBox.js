@@ -1,4 +1,4 @@
-import test from "../images/test.webp";
+import test from "../images/background.png";
 import {useCallback} from "react";
 
 function ViewWelcomeBox({welcomeText, setWelcomeText, kursName, setKursName}) {
