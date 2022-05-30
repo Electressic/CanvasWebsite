@@ -5,6 +5,7 @@ import React from "react";
 import {useState} from "react";
 import ViewCanvasNeu from "./View/ViewCanvasNeu";
 import ViewOverView from "./View/ViewOverView";
+import ScrollButton from "./ScrollButton";
 
 function Layout1() {
     const [welcomeText, setWelcomeText] = useState('');
@@ -14,7 +15,7 @@ function Layout1() {
     const [ovDuration, setOvDuration] = useState('');
     const [ovTitle, setOvTitle] =useState('');
     const [ovChapter, setOvChapter] =useState('');
-
+    const [showCanvas, setShowCanvas] =useState(false);
     return (
         <div className="App">
             <div className="split">
@@ -30,6 +31,9 @@ function Layout1() {
 
                         modulplan={modulplan}
                         setModulplan={setModulplan}
+
+                        showCanvasNeu={showCanvas}
+                        setShowCanvasNeu={setShowCanvas}
 
                         ovDuration={ovDuration}
                         setOvDuration={setOvDuration}
@@ -58,7 +62,11 @@ function Layout1() {
                         ovChapter={ovChapter}
                         setOvChapter={setOvChapter}
                     />
-                    <ViewCanvasNeu/>
+                    <ViewCanvasNeu
+                        showCanvas={showCanvas}
+                        setShowCanvas={setShowCanvas}
+                    />
+                    <ScrollButton />
                 </div>
             </div>
         </div>

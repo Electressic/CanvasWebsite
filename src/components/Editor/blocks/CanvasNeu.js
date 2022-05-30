@@ -1,10 +1,10 @@
-function CanvasNeu() {
-    const onAdd = () => {
+import {useState} from "react";
 
-    }
+function CanvasNeu({showCanvasNeu,setShowCanvasNeu}) {
+
     return (
         <div className="container">
-            <button onClick={onAdd}>Add</button>
+            <button onClick={console.log(setShowCanvasNeu(!showCanvasNeu))}>Add</button>
         </div>
     );
 }

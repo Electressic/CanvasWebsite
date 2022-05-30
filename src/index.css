@@ -294,3 +294,11 @@ label {
     right: 0;
     bottom: 0;
 }
+.scrollbtn {
+    position: fixed;
+    left: 85%;
+    bottom: 30px;
+    height: 20px;
+    z-index: 1;
+    cursor: pointer;
+}

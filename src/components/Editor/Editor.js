@@ -12,7 +12,8 @@ function Editor ({
                      modulplan, setModulplan,
                      ovDuration, setOvDuration,
                      ovTitle, setOvTitle,
-                     ovChapter, setOvChapter})
+                     ovChapter, setOvChapter,
+                     showCanvasNeu,setShowCanvasNeu})
 {
     const [showWelcomeBox, setShowWelcomeBox] = useState(false);
     const [showDescriptionBox, setShowDescriptionBox] = useState(false);
@@ -75,7 +76,10 @@ function Editor ({
                   Neu bei Canvas
               </li>
               {showCanvas &&
-                  <CanvasNeu />
+                  <CanvasNeu
+                      showCanvasNeu={showCanvasNeu}
+                      setShowCanvasNeu={setShowCanvasNeu}
+                  />
               }
               <li className="navbar-li" onClick={() => setShowAnsprechperson(!showAnsprechperson)}>
                   Ansprechpersonen

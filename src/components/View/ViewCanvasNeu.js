@@ -1,6 +1,6 @@
 import backgroundg from "../images/backgroundg.png";
 
-function ViewCanvasNeu () {
+function ViewCanvasNeu ({showCanvas, setShowCanvas}) {
 
     return (
         <div className="vCanvasNeu">
