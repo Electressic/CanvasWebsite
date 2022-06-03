@@ -6,6 +6,7 @@ import {useState} from "react";
 import ViewCanvasNeu from "./View/ViewCanvasNeu";
 import ViewOverView from "./View/ViewOverView";
 import ScrollButton from "./ScrollButton";
+import ViewContacts from "./View/ViewContacts";
 
 function Layout1() {
     const [welcomeText, setWelcomeText] = useState('');
@@ -65,6 +66,9 @@ function Layout1() {
                     <ViewCanvasNeu
                         showCanvas={showCanvas}
                         setShowCanvas={setShowCanvas}
+                    />
+                    <ViewContacts
+
                     />
                     <ScrollButton />
                 </div>

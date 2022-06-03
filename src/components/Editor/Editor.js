@@ -4,6 +4,7 @@ import Kurseinstieg from "./blocks/Kurseinstieg";
 import Modulplan from "./blocks/Modulplan";
 import Overview from "./blocks/Overview";
 import CanvasNeu from "./blocks/CanvasNeu";
+import Contacts from "./blocks/Contacts";
 
 function Editor ({
                      welcomeText, setWelcomeText,
@@ -84,6 +85,12 @@ function Editor ({
               <li className="navbar-li" onClick={() => setShowAnsprechperson(!showAnsprechperson)}>
                   Ansprechpersonen
               </li>
+              {showAnsprechperson &&
+                  <Contacts
+                      showContacts={showAnsprechperson}
+                      setShowContacts={setShowAnsprechperson}
+                  />
+              }
           </ul>
       </div>
     );
