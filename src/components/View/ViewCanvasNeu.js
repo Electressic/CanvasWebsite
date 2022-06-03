@@ -1,4 +1,4 @@
-import backgroundg from "../images/backgroundg.png";
+import backgroundg from "../images/background.png";
 
 function ViewCanvasNeu ({showCanvas, setShowCanvas}) {
 

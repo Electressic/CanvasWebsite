@@ -7,7 +7,6 @@ import CanvasNeu from "./blocks/CanvasNeu";
 import Contacts from "./blocks/Contacts";
 
 function Editor ({
-                     welcomeText, setWelcomeText,
                      kursName, setKursName,
                      kursBeschreibung, setKursbeschreibung,
                      modulplan, setModulplan,
@@ -32,8 +31,6 @@ function Editor ({
 
               {showWelcomeBox &&
                   <WelcomeBox
-                      welcomeText={welcomeText}
-                      setWelcomeText={setWelcomeText}
                       kursName={kursName}
                       setKursName={setKursName}
                   />

@@ -1,4 +1,4 @@
-import backgroundmix from "../images/backgroundmix.png";
+import backgroundmix from "../images/background.png";
 import {useCallback} from "react";
 
 function ViewOverView ({ovDuration,setOvDuration,

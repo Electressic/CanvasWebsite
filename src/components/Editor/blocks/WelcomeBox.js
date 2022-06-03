@@ -1,14 +1,17 @@
-function WelcomeBox ({welcomeText, setWelcomeText, kursName, setKursName}) {
+import {useContext} from "react";
+import {context} from "../../Layout1";
 
+function WelcomeBox ({kursName, setKursName}) {
+    const {welcomeText} = useContext(context)
     const onSubmit = (e) => {
         e.preventDefault()
 
-        setWelcomeText('')
+        welcomeText('')
         setKursName('')
     }
     return (
         <div className="container">
-            <form onSubmit={onSubmit}>
+            <form>
                 <div className="field">
                     <label>Headline:</label>
                     <input
@@ -16,7 +19,7 @@ function WelcomeBox ({welcomeText, setWelcomeText, kursName, setKursName}) {
                         id="1"
                         value={welcomeText}
                         placeholder="Willkommen"
-                        onChange={(e) => setWelcomeText(e.target.value)}
+                        onChange={(e) => welcomeText(e.target.value)}
                     />
                     <label>Kursname:</label>
                     <input
@@ -26,6 +29,9 @@ function WelcomeBox ({welcomeText, setWelcomeText, kursName, setKursName}) {
                         placeholder="Kursname"
                         onChange={(e) => setKursName(e.target.value)}
                     />
+                    <button onClick={onSubmit}>
+                        Submit
+                    </button>
                 </div>
             </form>
         </div>
