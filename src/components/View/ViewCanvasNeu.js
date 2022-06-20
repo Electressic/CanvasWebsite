@@ -1,10 +1,7 @@
-import backgroundg from "../images/background.png";
-
 function ViewCanvasNeu ({showCanvas, setShowCanvas}) {
 
     return (
         <div className="vCanvasNeu">
-            <img className="canvasneubg" src={backgroundg} />
             <h1 className="canvasneutitle">
                 Neu bei Canvas?
             </h1>

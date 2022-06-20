@@ -1,6 +1,5 @@
-import backgroundmix from "../images/background.png";
 import {useCallback} from "react";
-
+import Kapitel1 from "../images/Kapitel1.png";
 function ViewOverView ({ovDuration,setOvDuration,
                            ovTitle,setOvTitle,
                            ovChapter,setOvChapter})
@@ -17,23 +16,19 @@ function ViewOverView ({ovDuration,setOvDuration,
 
     return (
         <div className="vOverView">
-            <img className="bgmix" src={backgroundmix} />
-            <form>
-                <div>
-                    <button className="btntesting">
-                        JOA
-                    </button>
-                    <h1 className="ovTitle" type="text" onChange={handleOvTitle} value={ovTitle}>
-                        {ovTitle}
-                    </h1>
-                    <label className="ovChapter" type="text" onChange={handleOvChapter} value={ovChapter}>
-                        {ovChapter}
-                    </label>
-                    <label className="ovDuration" type="text" onChange={handleOvDuration} value={ovDuration}>
-                        {ovDuration}
-                    </label>
-                </div>
-            </form>
+            <div className="ovgoldcolor">
+                1
+            </div>
+                <img src={Kapitel1} className="kapitel" />
+                <h1 className="ovTitle" type="text" onChange={handleOvTitle} value={ovTitle}>
+                    {ovTitle}
+                </h1>
+                <label className="ovChapter" type="text" onChange={handleOvChapter} value={ovChapter}>
+                    {ovChapter}
+                </label>
+                <label className="ovDuration" type="text" onChange={handleOvDuration} value={ovDuration}>
+                    {ovDuration}
+                </label>
         </div>
     );
 }

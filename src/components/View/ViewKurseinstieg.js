@@ -1,4 +1,3 @@
-import test2 from "../images/background.png";
 import rakete from "../images/rakete.png";
 import {useCallback} from "react";
 
@@ -9,7 +8,6 @@ function ViewKurseinstieg ({kursBeschreibung, setKursbeschreibung}) {
 
     return (
         <div className="vKurseinstieg">
-            <img className="kursimage" src={test2} />
             <img className="rakete" src={rakete} />
             <h1 className="kurseinstiegtitle">
                 Kurseinstieg

@@ -6,6 +6,7 @@ import ViewCanvasNeu from "./View/ViewCanvasNeu";
 import ViewOverView from "./View/ViewOverView";
 import ScrollButton from "./ScrollButton";
 import ViewContacts from "./View/ViewContacts";
+import ViewModulplan from "./View/ViewModulplan";
 
 export const context = React.createContext(null);
 
@@ -55,6 +56,7 @@ function Layout1() {
                             kursBeschreibung={kursBeschreibung}
                             setKursbeschreibung={setKursbeschreibung}
                         />
+                        <ViewModulplan />
                         <ViewOverView
                             ovDuration={ovDuration}
                             setOvDuration={setOvDuration}

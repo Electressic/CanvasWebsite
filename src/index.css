@@ -23,6 +23,7 @@ body {
     margin: 100px 30px 30px 30px;
 }
 .right{
+    background-color: white;
     right: 0;
     max-width: 60%;
     max-height: 80%;
@@ -109,12 +110,16 @@ label {
 .vWelcomeBox {
     position: relative;
     overflow: hidden;
+    background-image: linear-gradient(to right, #f2edb4, #d9c65a);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 40px 40px rgba(0,0,0,0.15);
 }
 .headerimage {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
+    float: right;
+    width: auto;
+    height: auto;
+    max-height: 400px;
 }
 .headline {
     position: absolute;
@@ -124,8 +129,9 @@ label {
     bottom: 10%;
     left: 5%;
     right: 0;
-    color: white;
+    color: #808080;
     font-size: xx-large;
+    font-family: Oswald Light;
 }
 .kursname {
     position: absolute;
@@ -135,8 +141,9 @@ label {
     bottom: 0;
     left: 5%;
     right: 0;
-    color: #bea602;
+    color: #8c7c02;
     font-size: xxx-large;
+    font-family: Oswald;
 }
 
 /* Styling für Kurseinstieg */
@@ -144,15 +151,13 @@ label {
 .vKurseinstieg {
     position: relative;
     overflow: hidden;
-}
-.kursimage {
-    object-fit: cover;
-    width: 100%;
-    height:100%;
+    background-color: #e5e5e5;
     border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 40px 40px rgba(0,0,0,0.15);
 }
 .rakete {
-    position: absolute;
+    object-fit: cover;
     width: 50%;
     height: 100%;
     top: 0;
@@ -167,6 +172,8 @@ label {
     left:50%;
     right:0;
     color: #bea602;
+    font-size: xx-large;
+    font-family: Oswald;
 }
 .kursbeschreibung {
     position: absolute;
@@ -176,30 +183,41 @@ label {
     bottom:30%;
     left:50%;
     right:0;
+    font-size: large;
+    font-family: Open Sans, sans-serif;
+    color: #000000;
 }
 .modulbutton {
     position: absolute;
     height: fit-content;
     margin:auto;
-    top:90%;
+    padding: 5px;
+    width: 30%;
+    top:85%;
     left:60%;
     right: 0;
-    background-color: #bea602;
     border-radius: 5px;
-    border-color: #bea602;
-    cursor: pointer;
+    color: white;
+    background-color: #d9c65a;
+    font-family: Oswald;
 }
 
-/* Styling für OVerview */
-.vOverView {
+/* Styling für Modulplan */
+
+.vModulplan {
     position: relative;
     overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0px 40px 40px rgba(0,0,0,0.15);
+    border-radius: 20px;
 }
-.bgmix {
+.modulplanimg {
     object-fit: cover;
     width: 100%;
-    border-radius: 70px;
 }
+
+/* Styling für Editor OVerview */
+
 .overview-ul {
     list-style-type: none;
     margin:0;
@@ -233,33 +251,78 @@ label {
     background-color: #bea602;
     width:50%;
 }
+
+/* Styling für ViewOverview */
+
+.vOverView {
+    position: relative;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    max-width: 40%;
+    min-height: 40%;
+    margin-bottom: 20px;
+    box-shadow: 0px 40px 40px rgba(0,0,0,0.15);
+}
+.kapitel {
+    position: absolute;
+    margin: auto;
+    z-index: 2;
+    width: 15%;
+    top: 0;
+    right: 0;
+    bottom: 50%;
+    left: 0;
+    background-color: #8c7c02;
+    padding: 10px;
+    border-radius: 50%;
+}
+.ovgoldcolor {
+    position: absolute;
+    z-index: 1;
+    background-color: #d9c65a;
+    width: 100%;
+    height: 30%;
+    font-family: Oswald;
+    color: #8c7c02;
+    text-align: center;
+}
 .ovTitle {
     position: absolute;
     height: fit-content;
     margin:0;
-    top:40%;
+    top:50%;
     right:0;
     left:0;
     bottom:0;
     text-align: center;
+    font-size: large;
+    font-family: Oswald;
+    color: #4d4d4d;
 }
 .ovChapter {
     position: absolute;
     height: fit-content;
     margin:0;
-    top:70%;
+    top:80%;
     right:0;
     left:10%;
     bottom:0;
+    font-size: small;
+    font-family: Open Sans, sans-serif;
+    color: #4d4d4d;
 }
 .ovDuration {
     position: absolute;
     height: fit-content;
     margin:0;
-    top:70%;
+    top:80%;
     right:0;
     left:80%;
     bottom:0;
+    font-size: small;
+    font-family: Open Sans, sans-serif;
+    color: #4d4d4d;
 }
 
 /* Styling für Neu bei Canvas */
@@ -267,39 +330,42 @@ label {
 .vCanvasNeu {
     position: relative;
     overflow: hidden;
-}
-.canvasneubg {
-    object-fit: cover;
-    align-items: center;
+    margin-bottom: 20px;
     width: 100%;
-    border-radius: 100px;
+    height: 15%;
+    background-image: linear-gradient(to bottom right, #e5d8a7, #d9c65a );
+    box-shadow: 0px 40px 40px rgba(0,0,0,0.15);
+    border-radius: 20px;
 }
 .canvasneutitle {
     position: absolute;
-    height: fit-content;
-    margin: auto;
-    top: 0;
+    top: 10%;
     left: 10%;
-    right: 0;
-    bottom: 0;
+    font-size: x-large;
+    font-family: Oswald;
+    color: #ffffff;
 }
 .moreinfos {
     position: absolute;
-    height: fit-content;
-    margin: auto;
-    top: 10%;
+    top: 60%;
     left: 10%;
-    right: 0;
-    bottom: 0;
+    font-size: medium;
+    font-family: Oswald;
+    color: #ffffff;
 }
 .canvasbtn {
     position: absolute;
-    height: fit-content;
-    margin: auto;
-    top: 10%;
-    left: 50%;
+    width: 20%;
+    height: 30%;
+    padding: 5px;
+    top: 40%;
+    left: 70%;
     right: 0;
     bottom: 0;
+    background-color: white;
+    color: #c7a315;
+    font-family: Oswald;
+    border-radius: 5px;
 }
 .scrollbtn {
     position: fixed;
@@ -313,11 +379,10 @@ label {
 /* VIEWCONTACTS */
 
 .vContacts {
-    border: 1px solid blue;
     border-radius: 5px;
-    background: grey;
-    max-width: 40%;
-    max-height: 60%;
+    background: #6a6969;
+    width: 40%;
+    height: 60%;
     text-align: center;
     margin: 10px;
     padding: 20px;
@@ -334,4 +399,8 @@ label {
 }
 .idkyet h1 {
     color: #bea602;
+    font-family: Oswald;
+}
+.vContacts {
+    color: white;
 }

@@ -1,4 +1,4 @@
-import test from "../images/background.png";
+import headerimgbg from "../images/Headerbild_ObjProg.png";
 import {useCallback} from "react";
 
 function ViewWelcomeBox({welcomeText, setWelcomeText, kursName, setKursName}) {
@@ -11,7 +11,7 @@ function ViewWelcomeBox({welcomeText, setWelcomeText, kursName, setKursName}) {
 
     return (
         <div className="vWelcomeBox">
-            <img className="headerimage" src={test} />
+            <img className="headerimage" src={headerimgbg} />
             <div className="headline" type="text" onChange={handleWelcomeText} value={welcomeText}>
                 {welcomeText ? welcomeText : "BeispielText"}
             </div>
