@@ -8,11 +8,7 @@ import ScrollButton from "./ScrollButton";
 import ViewContacts from "./View/ViewContacts";
 import ViewModulplan from "./View/ViewModulplan";
 
-export const context = React.createContext(null);
-
 function Layout1() {
-    const [welcomeText, setWelcomeText] = useState('');
-    const [kursName, setKursName] = useState('')
     const [kursBeschreibung, setKursbeschreibung] = useState('');
     const [modulplan, setModulplan] = useState('');
     const [ovDuration, setOvDuration] = useState('');
@@ -20,13 +16,10 @@ function Layout1() {
     const [ovChapter, setOvChapter] =useState('');
     const [showCanvas, setShowCanvas] =useState(false);
     return (
-        <context.Provider value={(welcomeText)}>
             <div className="App">
                 <div className="split">
                     <div className="split left">
                         <Editor
-                            kursName={kursName}
-                            setKursName={setKursName}
 
                             kursBeschreibung={kursBeschreibung}
                             setKursbeschreibung={setKursbeschreibung}
@@ -47,10 +40,6 @@ function Layout1() {
                     </div>
                     <div className="split right">
                         <ViewWelcomeBox
-                            welcomeText={welcomeText}
-                            setWelcomeText={setWelcomeText}
-                            kursName={kursName}
-                            setKursName={setKursName}
                         />
                         <ViewKurseinstieg
                             kursBeschreibung={kursBeschreibung}
@@ -76,7 +65,6 @@ function Layout1() {
                     </div>
                 </div>
             </div>
-        </context.Provider>
     );
 }
 export default Layout1;

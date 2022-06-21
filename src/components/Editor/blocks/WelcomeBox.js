@@ -1,13 +1,19 @@
-import {useContext} from "react";
-import {context} from "../../Layout1";
+import {useRecoilState} from "recoil";
+import {welcomeBoxState} from "../../services/atoms"
+import {useState} from "react";
 
-function WelcomeBox ({kursName, setKursName}) {
-    const {welcomeText} = useContext(context)
-    const onSubmit = (e) => {
+function WelcomeBox () {
+    const [welcomeText, setWelcomeText] = useState("");
+    const [kursName, setKursname] = useState("");
+    const [header, setTextState] = useRecoilState(welcomeBoxState)
+    const addText = (e) => {
         e.preventDefault()
-
-        welcomeText('')
-        setKursName('')
+        setTextState([...header, welcomeText]);
+        setWelcomeText("");
+    }
+    const deleteText = (id) =>  {
+        const newtext = header.filter((_, item) => item !== id);
+        setTextState(newtext);
     }
     return (
         <div className="container">
@@ -19,7 +25,7 @@ function WelcomeBox ({kursName, setKursName}) {
                         id="1"
                         value={welcomeText}
                         placeholder="Willkommen"
-                        onChange={(e) => welcomeText(e.target.value)}
+                        onChange={(e) => setWelcomeText(e.target.value)}
                     />
                     <label>Kursname:</label>
                     <input
@@ -27,10 +33,13 @@ function WelcomeBox ({kursName, setKursName}) {
                         id="2"
                         value={kursName}
                         placeholder="Kursname"
-                        onChange={(e) => setKursName(e.target.value)}
+                        onChange={(e) => setKursname(e.target.value)}
                     />
-                    <button onClick={onSubmit}>
+                    <button onClick={addText}>
                         Submit
+                    </button>
+                    <button onClick={() => deleteText()}>
+                        X
                     </button>
                 </div>
             </form>

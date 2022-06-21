@@ -28,14 +28,10 @@ function Editor ({
               <li className="navbar-li" onClick={() => setShowWelcomeBox(!showWelcomeBox)}>
                   WelcomeBox
               </li>
-
-              {showWelcomeBox &&
-                  <WelcomeBox
-                      kursName={kursName}
-                      setKursName={setKursName}
-                  />
-              }
-
+                  {showWelcomeBox &&
+                      <WelcomeBox
+                      />
+                  }
               <li className="navbar-li" onClick={() => setShowDescriptionBox(!showDescriptionBox)}>
                   Kurseinstieg
               </li>

@@ -1,22 +1,19 @@
 import headerimgbg from "../images/Headerbild_ObjProg.png";
 import {useCallback} from "react";
+import {useRecoilState} from "recoil";
+import {welcomeBoxState} from "../services/atoms";
 
-function ViewWelcomeBox({welcomeText, setWelcomeText, kursName, setKursName}) {
-    const handleWelcomeText = useCallback(event => {
-        setWelcomeText(event.target.value)
-    }, [setWelcomeText])
-    const handleKursName = useCallback(event => {
-        setKursName(event.target.value)
-    }, [setKursName])
-
+function ViewWelcomeBox() {
+    const [header, setTextState] = useRecoilState(welcomeBoxState);
     return (
         <div className="vWelcomeBox">
             <img className="headerimage" src={headerimgbg} />
-            <div className="headline" type="text" onChange={handleWelcomeText} value={welcomeText}>
-                {welcomeText ? welcomeText : "BeispielText"}
-            </div>
-            <div className="kursname" type="text" onChange={handleKursName} value={kursName}>
-                {kursName ? kursName : "BeispielText2"}
+            {header.map((item, index) => (
+                <div className="headline" key={index}>
+                    {item}
+                </div>
+            ))}
+            <div className="kursname">
             </div>
         </div>
     );
