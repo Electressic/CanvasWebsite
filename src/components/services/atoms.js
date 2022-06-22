@@ -1,12 +1,16 @@
 import {atom} from "recoil";
 
-export const welcomeBoxState = atom ( {
-    key: 'welcomeBoxState',
+export const welcomeHeaderState = atom ( {
+    key: 'welcomeHeaderState',
+    default: [],
+});
+export const kursnameState = atom ( {
+    key: 'kursnameState',
     default: [],
 });
 export const KurseinstiegState = atom ( {
     key: 'Kurseinstieg',
-    default: [],
+    default: "",
 });
 export const ModulplanState = atom ( {
     key: 'Modulplan',

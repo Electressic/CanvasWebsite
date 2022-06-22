@@ -1,14 +1,10 @@
-import {useCallback} from "react";
+import {useCallback, useState} from "react";
+import {useRecoilState} from "recoil";
+import {KurseinstiegState} from "../../services/atoms";
 
-function Kurseinstieg({kursBeschreibung, setKursbeschreibung}) {
-    const onSubmit = (e) => {
-        e.preventDefault()
-        setKursbeschreibung('')
-        console.log(kursBeschreibung)
-    }
-    const handleKursbeschreibung = useCallback(e => {
-        setKursbeschreibung(e.target.value)
-    }, [setKursbeschreibung])
+function Kurseinstieg() {
+    const [kursBeschreibung, setKursbeschreibung] = useRecoilState(KurseinstiegState);
+
     return (
       <div className="container">
           <label>Kursbeschreibung:</label>
@@ -18,9 +14,6 @@ function Kurseinstieg({kursBeschreibung, setKursbeschreibung}) {
               placeholder="test"
               onChange={(e) => setKursbeschreibung(e.target.value)}
           />
-          <button onClick={onSubmit}>
-              Submit
-          </button>
       </div>
     );
 }

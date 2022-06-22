@@ -1,19 +1,40 @@
 import headerimgbg from "../images/Headerbild_ObjProg.png";
-import {useCallback} from "react";
-import {useRecoilState} from "recoil";
-import {welcomeBoxState} from "../services/atoms";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {kursnameState, welcomeHeaderState} from "../services/atoms";
 
 function ViewWelcomeBox() {
-    const [header, setTextState] = useRecoilState(welcomeBoxState);
+    const [header, setHeaderState] = useRecoilState(welcomeHeaderState)
+    const [kname, setKursnameState] = useRecoilState(kursnameState);
+    const deletewText = (id) =>  {
+        const newwtext = header.filter((_, item) => item !== id);
+        setHeaderState(newwtext);
+    }
+    const deletekname = (id) =>  {
+        const newktext = kname.filter((_, item2) => item2 !== id);
+        setKursnameState(newktext);
+    }
     return (
         <div className="vWelcomeBox">
             <img className="headerimage" src={headerimgbg} />
-            {header.map((item, index) => (
-                <div className="headline" key={index}>
-                    {item}
-                </div>
-            ))}
+            <div className="headline">
+                {header.map((item, index) => (
+                    <div key={index}>
+                        {item}
+                        <button onClick={() => deletewText(index)}>
+                            X
+                        </button>
+                    </div>
+                ))}
+            </div>
             <div className="kursname">
+                {kname.map((item2, index) => (
+                    <div key={index}>
+                        {item2}
+                        <button className="deletebutton" onClick={() => deletekname(index)}>
+                            X
+                        </button>
+                    </div>
+                ))}
             </div>
         </div>
     );

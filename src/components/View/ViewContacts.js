@@ -7,7 +7,7 @@ function ViewContacts () {
                 <div className="box">
                     1
                 </div>
-                <div className>
+                <div>
                     Dozent
                 </div>
                 <div>

@@ -1,23 +1,29 @@
 import {useRecoilState} from "recoil";
-import {welcomeBoxState} from "../../services/atoms"
+import {kursnameState, welcomeHeaderState} from "../../services/atoms"
 import {useState} from "react";
 
 function WelcomeBox () {
     const [welcomeText, setWelcomeText] = useState("");
     const [kursName, setKursname] = useState("");
-    const [header, setTextState] = useRecoilState(welcomeBoxState)
+    const [header, setTextState] = useRecoilState(welcomeHeaderState);
+    const [kname, setKursnameState] = useRecoilState(kursnameState);
+
     const addText = (e) => {
         e.preventDefault()
-        setTextState([...header, welcomeText]);
-        setWelcomeText("");
-    }
-    const deleteText = (id) =>  {
-        const newtext = header.filter((_, item) => item !== id);
-        setTextState(newtext);
+        var wText = document.getElementById("1");
+        var wKursname = document.getElementById("2");
+        if ( wText && wText.value) {
+            setTextState([...header, welcomeText]);
+            setWelcomeText("");
+        }
+        if ( wKursname && wKursname.value) {
+            setKursnameState([...kname, kursName]);
+            setKursname("");
+        }
     }
     return (
         <div className="container">
-            <form>
+            <form name="welcomeBox">
                 <div className="field">
                     <label>Headline:</label>
                     <input
@@ -37,9 +43,6 @@ function WelcomeBox () {
                     />
                     <button onClick={addText}>
                         Submit
-                    </button>
-                    <button onClick={() => deleteText()}>
-                        X
                     </button>
                 </div>
             </form>

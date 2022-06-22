@@ -1,19 +1,18 @@
 import rakete from "../images/rakete.png";
 import {useCallback} from "react";
+import {useRecoilValue} from "recoil";
+import {KurseinstiegState} from "../services/atoms";
 
-function ViewKurseinstieg ({kursBeschreibung, setKursbeschreibung}) {
-    const handleKursbeschreibung = useCallback(e => {
-        setKursbeschreibung(e.target.value)
-    }, [setKursbeschreibung])
-
+function ViewKurseinstieg () {
+    const einstiegstext = useRecoilValue(KurseinstiegState)
     return (
         <div className="vKurseinstieg">
             <img className="rakete" src={rakete} />
             <h1 className="kurseinstiegtitle">
                 Kurseinstieg
             </h1>
-            <div className="kursbeschreibung" onChange={handleKursbeschreibung} value={kursBeschreibung} >
-                {kursBeschreibung ? kursBeschreibung :"BesipielText3"}
+            <div className="kursbeschreibung">
+                {einstiegstext}
             </div>
             <button className="modulbutton">
                 Direkt zu den Modulen
