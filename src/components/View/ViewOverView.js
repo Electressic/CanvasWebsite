@@ -1,34 +1,33 @@
-import {useCallback} from "react";
-import Kapitel1 from "../images/Kapitel1.png";
-function ViewOverView ({ovDuration,setOvDuration,
-                           ovTitle,setOvTitle,
-                           ovChapter,setOvChapter})
-{
-    const handleOvTitle = useCallback(event => {
-        setOvTitle(event.target.value)
-    }, [setOvTitle])
-    const handleOvChapter = useCallback(event => {
-        setOvChapter(event.target.value)
-    }, [setOvChapter])
-    const handleOvDuration = useCallback(event => {
-        setOvDuration(event.target.value)
-    }, [setOvDuration])
-
-    return (
-        <div className="vOverView">
-            <div className="ovgoldcolor">
-                1
-            </div>
-                <img src={Kapitel1} className="kapitel" />
-                <h1 className="ovTitle" type="text" onChange={handleOvTitle} value={ovTitle}>
-                    {ovTitle}
+import {useRecoilValue} from "recoil";
+import {OverviewState} from "../services/atoms";
+function ViewOverView () {
+    const overviewObjects = useRecoilValue(OverviewState);
+    function courseItem({ icon, title, nuggets, duration}, index) {
+        return (
+            <div className="vOverView">
+                <div className="ovgoldcolor">
+                    {index+1}
+                </div>
+                <img alt="not found" className="kapitel" width={"250px"} src={icon} />
+                <h1 className="ovTitle" type="text" >
+                    {title}
                 </h1>
-                <label className="ovChapter" type="text" onChange={handleOvChapter} value={ovChapter}>
-                    {ovChapter}
+                <label className="ovChapter" type="text">
+                    {nuggets}
                 </label>
-                <label className="ovDuration" type="text" onChange={handleOvDuration} value={ovDuration}>
-                    {ovDuration}
+                <label className="ovDuration" type="text">
+                    {duration}
                 </label>
+            </div>
+        );
+    }
+    return (
+        <div className="vOverViewTest">
+            <div className="vOverViewSeperate">
+                {overviewObjects.items.map((nuggets, index) => {
+                    return courseItem(nuggets, index);
+                })}
+            </div>
         </div>
     );
 }

@@ -12,7 +12,9 @@ function ViewKurseinstieg () {
                 Kurseinstieg
             </h1>
             <div className="kursbeschreibung">
-                {einstiegstext}
+                <div className="kursbeschreibungtext">
+                    {einstiegstext}
+                </div>
             </div>
             <button className="modulbutton">
                 Direkt zu den Modulen

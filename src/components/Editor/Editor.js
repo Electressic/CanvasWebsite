@@ -7,7 +7,6 @@ import CanvasNeu from "./blocks/CanvasNeu";
 import Contacts from "./blocks/Contacts";
 
 function Editor ({
-                     kursName, setKursName,
                      kursBeschreibung, setKursbeschreibung,
                      modulplan, setModulplan,
                      ovDuration, setOvDuration,
@@ -28,10 +27,7 @@ function Editor ({
               <li className="navbar-li" onClick={() => setShowWelcomeBox(!showWelcomeBox)}>
                   WelcomeBox
               </li>
-                  {showWelcomeBox &&
-                      <WelcomeBox
-                      />
-                  }
+              {showWelcomeBox && <WelcomeBox /> }
               <li className="navbar-li" onClick={() => setShowDescriptionBox(!showDescriptionBox)}>
                   Kurseinstieg
               </li>
@@ -55,16 +51,7 @@ function Editor ({
               <li className="navbar-li" onClick={() => setShowOverview(!showOverview)}>
                   Inhaltsübersicht
               </li>
-              {showOverview &&
-                  <Overview
-                      ovDuration={ovDuration}
-                      setOvDuration={setOvDuration}
-                      ovTitle={ovTitle}
-                      setOvTitle={setOvTitle}
-                      ovChapter={ovChapter}
-                      setOvChapter={setOvChapter}
-
-                  />}
+              {showOverview && <Overview/>}
 
               <li className="navbar-li" onClick={() => setShowCanvas(!showCanvas)}>
                   Neu bei Canvas

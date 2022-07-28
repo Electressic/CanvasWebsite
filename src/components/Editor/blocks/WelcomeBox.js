@@ -4,21 +4,15 @@ import {useState} from "react";
 
 function WelcomeBox () {
     const [welcomeText, setWelcomeText] = useState("");
-    const [kursName, setKursname] = useState("");
+    const [kursName, setKursname] = useRecoilState(kursnameState);
     const [header, setTextState] = useRecoilState(welcomeHeaderState);
-    const [kname, setKursnameState] = useRecoilState(kursnameState);
 
     const addText = (e) => {
         e.preventDefault()
         var wText = document.getElementById("1");
-        var wKursname = document.getElementById("2");
         if ( wText && wText.value) {
             setTextState([...header, welcomeText]);
             setWelcomeText("");
-        }
-        if ( wKursname && wKursname.value) {
-            setKursnameState([...kname, kursName]);
-            setKursname("");
         }
     }
     return (
@@ -33,6 +27,9 @@ function WelcomeBox () {
                         placeholder="Willkommen"
                         onChange={(e) => setWelcomeText(e.target.value)}
                     />
+                    <button onClick={addText}>
+                        Submit
+                    </button>
                     <label>Kursname:</label>
                     <input
                         type="text"
@@ -41,9 +38,6 @@ function WelcomeBox () {
                         placeholder="Kursname"
                         onChange={(e) => setKursname(e.target.value)}
                     />
-                    <button onClick={addText}>
-                        Submit
-                    </button>
                 </div>
             </form>
         </div>

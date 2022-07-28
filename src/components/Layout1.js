@@ -9,8 +9,6 @@ import ViewContacts from "./View/ViewContacts";
 import ViewModulplan from "./View/ViewModulplan";
 
 function Layout1() {
-    const [kursBeschreibung, setKursbeschreibung] = useState('');
-    const [modulplan, setModulplan] = useState('');
     const [ovDuration, setOvDuration] = useState('');
     const [ovTitle, setOvTitle] =useState('');
     const [ovChapter, setOvChapter] =useState('');
@@ -20,16 +18,8 @@ function Layout1() {
                 <div className="split">
                     <div className="split left">
                         <Editor
-
-                            kursBeschreibung={kursBeschreibung}
-                            setKursbeschreibung={setKursbeschreibung}
-
-                            modulplan={modulplan}
-                            setModulplan={setModulplan}
-
                             showCanvasNeu={showCanvas}
                             setShowCanvasNeu={setShowCanvas}
-
                             ovDuration={ovDuration}
                             setOvDuration={setOvDuration}
                             ovTitle={ovTitle}
@@ -39,12 +29,8 @@ function Layout1() {
                         />
                     </div>
                     <div className="split right">
-                        <ViewWelcomeBox
-                        />
-                        <ViewKurseinstieg
-                            kursBeschreibung={kursBeschreibung}
-                            setKursbeschreibung={setKursbeschreibung}
-                        />
+                        <ViewWelcomeBox />
+                        <ViewKurseinstieg />
                         <ViewModulplan />
                         <ViewOverView
                             ovDuration={ovDuration}

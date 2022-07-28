@@ -6,7 +6,8 @@ export const welcomeHeaderState = atom ( {
 });
 export const kursnameState = atom ( {
     key: 'kursnameState',
-    default: [],
+    default: ""
+    ,
 });
 export const KurseinstiegState = atom ( {
     key: 'Kurseinstieg',
@@ -19,9 +20,14 @@ export const ModulplanState = atom ( {
 export const OverviewState = atom ( {
     key: 'Overview',
     default: {
-        Duration: [],
-        Title: [],
-        Nuggets: [],
+        items: [
+            {
+                icon:"",
+                title:"",
+                nuggets:"",
+                duration:"",
+            }
+        ]
     },
 });
 export const CanvasneuState = atom ( {

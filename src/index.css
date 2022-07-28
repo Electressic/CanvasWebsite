@@ -119,12 +119,13 @@ label {
     float: right;
     width: auto;
     height: auto;
-    max-height: 400px;
+    max-height: 300px;
 }
 .headline {
     position: absolute;
     height: fit-content;
     margin: auto;
+    padding-bottom: 50px;
     top: 0;
     bottom: 10%;
     left: 5%;
@@ -137,6 +138,7 @@ label {
     position: absolute;
     height: fit-content;
     margin: auto;
+    padding-top: 20px;
     top: 10%;
     bottom: 0;
     left: 5%;
@@ -146,6 +148,7 @@ label {
     font-family: Oswald;
 }
 .deletebutton {
+    margin-left: 20px;
 }
 
 /* Styling für Kurseinstieg */
@@ -160,10 +163,9 @@ label {
 }
 .rakete {
     object-fit: cover;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    right: 50%;
+    width: auto;
+    height: auto;
+    max-height: 500px;
 }
 .kurseinstiegtitle {
     position: absolute;
@@ -179,15 +181,17 @@ label {
 }
 .kursbeschreibung {
     position: absolute;
-    height: fit-content;
     margin:auto;
-    top:0;
-    bottom:30%;
+    top:30%;
+    bottom:0;
     left:50%;
     right:0;
     font-size: large;
     font-family: Open Sans, sans-serif;
     color: #000000;
+}
+.kursbeschreibungtext {
+    height: fit-content;
 }
 .modulbutton {
     position: absolute;
@@ -255,29 +259,36 @@ label {
 }
 
 /* Styling für ViewOverview */
-
+.vOverViewSeperate {
+    padding: 20px;
+    column-count: 2;
+}
 .vOverView {
     position: relative;
     overflow: hidden;
     background-color: #f2f2f2;
+    border-color: #8c7c02;
+    min-height: 300px;
+    padding-top: 50px;
+    padding-bottom:0px;
     border-radius: 20px;
-    max-width: 40%;
-    min-height: 40%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     box-shadow: 0px 40px 40px rgba(0,0,0,0.15);
 }
 .kapitel {
     position: absolute;
     margin: auto;
     z-index: 2;
-    width: 15%;
+    width: 100px;
+    height: 100px;
     top: 0;
     right: 0;
-    bottom: 50%;
+    bottom: 30%;
     left: 0;
     background-color: #8c7c02;
     padding: 10px;
     border-radius: 50%;
+    text-align: center;
 }
 .ovgoldcolor {
     position: absolute;
@@ -285,20 +296,23 @@ label {
     background-color: #d9c65a;
     width: 100%;
     height: 30%;
+    top: 0;
+    padding:10px;
     font-family: Oswald;
+    font-size: xx-large;
     color: #8c7c02;
-    text-align: center;
+    text-align: left;
 }
 .ovTitle {
     position: absolute;
     height: fit-content;
     margin:0;
-    top:50%;
+    top:60%;
     right:0;
     left:0;
     bottom:0;
     text-align: center;
-    font-size: large;
+    font-size: xx-large;
     font-family: Oswald;
     color: #4d4d4d;
 }
